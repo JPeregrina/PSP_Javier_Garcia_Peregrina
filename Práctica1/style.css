@@ -1,0 +1,30 @@
+
+.menu li {
+    display: inline;
+    text-decoration: none;
+}
+
+a {
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-decoration: none;
+    color: goldenrod;
+    font-size: x-large;
+    
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    color: blanchedalmond;
+    font-size: 4em;
+}
+
+body {
+    background-color: brown;
+    text-align: center;
+}
