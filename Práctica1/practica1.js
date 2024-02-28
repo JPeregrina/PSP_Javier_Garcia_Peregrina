@@ -2,6 +2,8 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const TypeList = require("./contentController");
+
 
 const requestListener = function (request, response){
     //Recoger la url de la petición
@@ -15,22 +17,8 @@ const requestListener = function (request, response){
 
     //Controlar la extension de la petición y establecer el tipo de contenido.
     let extNameFile = "";
-    extNameFile = path.extname(request.url);
-
-    switch(extNameFile) {
-        case ".html":
-            response.setHeader("Content-Type", "text/html");
-            break;
-        case ".css":
-            response.setHeader("Content-Type", "text/css");
-            break;
-        case ".jpg":
-            response.setHeader("Content-Type", "image/jpg");
-            break;
-        default:
-            response.setHeader("Content-Type", "text/html");    
-            break;
-    }
+    extNameFile = path.extname(urlPath);
+    response.setHeader("Content-Type", TypeList.getContentType(extNameFile));
 
     //Cargar el archivo del path y escribirlo para mostrarlo en la página web.
     fs.readFile(urlPath, (err, data) => {
