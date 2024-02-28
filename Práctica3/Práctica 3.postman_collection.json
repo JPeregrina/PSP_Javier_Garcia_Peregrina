@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "3d9a85b8-abee-4a12-909a-12ce93bc6830",
+		"name": "Práctica 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33257688"
+	},
+	"item": [
+		{
+			"name": "GET by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros?id=65dcf4751a4cb2e06a81b1bc",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "65dcf4751a4cb2e06a81b1bc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET by Name & Count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros?titulo=El camino de los reyes&ejemplares=16",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					],
+					"query": [
+						{
+							"key": "titulo",
+							"value": "El camino de los reyes"
+						},
+						{
+							"key": "ejemplares",
+							"value": "16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST multiple",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"titulo\": \"Titulo1\",\r\n    \"autor\": [\r\n      \"Autor1\"\r\n    ],\r\n    \"ejemplares\": 16\r\n  },\r\n  {\r\n    \"titulo\": \"Titulo2\",\r\n    \"autor\": [\r\n      \"Autor2\"\r\n    ],\r\n    \"ejemplares\": 12\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/libros",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST solo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"titulo\": \"Titulo1\",\r\n\"autor\": [\r\n    \"Autor1\"\r\n],\r\n\"ejemplares\": 16\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/libros",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n     \"titulo\": \"TituloModificado\",\r\n     \"autor\": [\"AutorModificado\"],\r\n     \"ejemplares\": 3\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/libros?id=65dcf4751a4cb2e06a81b1bc",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "65dcf4751a4cb2e06a81b1bc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros?id=65dd01d7ec17b9072169fcf5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "65dd01d7ec17b9072169fcf5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
